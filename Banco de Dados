@@ -1,0 +1,22 @@
+create table Comissionado (
+
+TotalVenda double not null,
+TaxaComissao double not null,
+constraint Comissionado foreign key (CodEmpregado) references Empregado(CodEmpegado)
+)
+
+create table Empregado (
+CodEmpregado int auto_increment,
+Nome varchar(20) not null,
+Sobrenome varchar(20) not null,
+CPF varchar(20) not null,
+Tipo varchar(20) not null
+)
+
+create table Horista (
+PrecoHora double not null,
+HorasTrabalhadas double 
+not null
+
+constraint Horista foreign key (CodEmpregado) references Empregado(CodEmpegado)
+)
