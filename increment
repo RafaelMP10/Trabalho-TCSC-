@@ -1,0 +1,20 @@
+create table Empregado (
+ Cod_Emp int IDENTITY(1,1) primary key,
+ cpf int not null,
+ nome varchar (50),
+ sobrenome varchar (20) )
+ 
+ create table Horista (
+ cpf_H int not null,
+ preco_hora decimal (4,2),
+ horas_trabalhadas decimal (5,2),
+ foreign key (cpf_H) references Empregado (Cod_Emp) )
+ 
+ create table Comissionado (
+ cpf_C int not null,
+ total_venda decimal (6,2),
+ taxa_comissao decimal (2,2),
+ foreign key (cpf_C) references Empregado (Cod_Emp) )
+ 
+ 
+ 
